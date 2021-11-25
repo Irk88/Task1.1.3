@@ -8,14 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    Connection connection = null;
-    Statement statement = null;
-    PreparedStatement preparedStatement = null;
 
     public UserDaoJDBCImpl() {
     }
 
     public void createUsersTable() {
+        Connection connection = null;
+        Statement statement = null;
         try {
             connection = Util.getConnection();
             statement = connection.createStatement();
@@ -45,6 +44,8 @@ public class UserDaoJDBCImpl implements UserDao {
 
 
     public void dropUsersTable() {
+        Connection connection = null;
+        Statement statement = null;
         try {
             connection = Util.getConnection();
             statement = connection.createStatement();
@@ -69,6 +70,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
         try {
             connection = Util.getConnection();
             preparedStatement = connection.prepareStatement
@@ -98,6 +101,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
         try {
             connection = Util.getConnection();
             preparedStatement = connection.prepareStatement
@@ -123,6 +128,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public List<User> getAllUsers() {
+        Connection connection = null;
+        Statement statement = null;
         List<User> usersList = new ArrayList<>();
 
         try {
@@ -160,6 +167,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
+        Connection connection = null;
+        Statement statement = null;
         try {
             connection = Util.getConnection();
             statement = connection.createStatement();
